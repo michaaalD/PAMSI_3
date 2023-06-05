@@ -30,7 +30,8 @@ Things to remember during upgrading project to new task:
 //                         Locate files (change as needed).
 // --------------------------------------------------------------------------------
 set(SOURCES          // All .cpp files in src/
-    src/.cpp
+    src/computer.cpp
+    src/board.cpp
   
     
      // etc.

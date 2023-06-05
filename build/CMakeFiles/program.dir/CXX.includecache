@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../inc/board.h
+vector
+-
+
+/home/michal/Desktop/PAMSI_projekt3/inc/board.h
+vector
+-
+
+/home/michal/Desktop/PAMSI_projekt3/inc/computer.h
+board.h
+/home/michal/Desktop/PAMSI_projekt3/inc/board.h
+
+/home/michal/Desktop/PAMSI_projekt3/src/board.cpp
+board.h
+/home/michal/Desktop/PAMSI_projekt3/src/board.h
+iomanip
+-
+iostream
+-
+string
+-
+
+/home/michal/Desktop/PAMSI_projekt3/src/computer.cpp
+../inc/computer.h
+/home/michal/Desktop/PAMSI_projekt3/inc/computer.h
+algorithm
+-
+limits
+-
+

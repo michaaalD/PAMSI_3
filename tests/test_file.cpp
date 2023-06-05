@@ -1,39 +1,29 @@
 
-#include "../inc/queue.hh"
 #include "doctest/doctest.h"
 // This is all that is needed to compile a test-runner executable.
 // More tests can be added here, or in a new tests/*.cpp file.
 
+#include "../inc/board.h"
+#include "../inc/computer.h"
 
 
-TEST_CASE("Check enque")
-{
-    
-    Queue<int> Q;
-    Q.enque(5);
-
-    CHECK(Q.get_top()==5);
+TEST_CASE("Sprawdzenie printa planszy"){
+    Board board(3, 3, 'x');
+    Computer ai(3);
+    board.print();
 }
 
-TEST_CASE("Check deque")
+TEST_CASE("Sprawdzenie zmiany tury")
 {
-    Queue<int> Q;
-    Q.enque(6);
-    Q.enque(9);
-    Q.enque(15);
-    Q.enque(23);
-    Q.deque();
-    CHECK(Q.get_top()==9);
+    int ai = 0;
+    int player = 1;
+    Board board(3, 3, player);
+    //Computer ai(3);
+    board.changeTurn(ai);
+   bool result =  board.turnCheck();
+   CHECK(result == false);
 }
 
+TEST_CASE("Sprawdzenie reseta"){
 
-
-TEST_CASE("Structure size")
-{
-    Queue<int> Q;
-    Q.enque(6);
-    Q.enque(9);
-    Q.enque(15);
-    Q.enque(23);
-    CHECK(Q.get_size()== 4);
 }
