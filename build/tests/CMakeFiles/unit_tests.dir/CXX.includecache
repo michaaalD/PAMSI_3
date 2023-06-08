@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/michal/Desktop/PAMSI_projekt3/inc/board.h
+/home/michal/Desktop/PAMSI_projekt3/inc/game.h
 vector
 -
 
-/home/michal/Desktop/PAMSI_projekt3/inc/computer.h
-board.h
-/home/michal/Desktop/PAMSI_projekt3/inc/board.h
+/home/michal/Desktop/PAMSI_projekt3/inc/game_ai.h
+../inc/game.h
+/home/michal/Desktop/PAMSI_projekt3/inc/game.h
 
 /home/michal/Desktop/PAMSI_projekt3/tests/doctest/doctest.h
 signal.h
@@ -101,8 +101,8 @@ unistd.h
 /home/michal/Desktop/PAMSI_projekt3/tests/test_file.cpp
 doctest/doctest.h
 /home/michal/Desktop/PAMSI_projekt3/tests/doctest/doctest.h
-../inc/board.h
-/home/michal/Desktop/PAMSI_projekt3/inc/board.h
-../inc/computer.h
-/home/michal/Desktop/PAMSI_projekt3/inc/computer.h
+../inc/game.h
+/home/michal/Desktop/PAMSI_projekt3/inc/game.h
+../inc/game_ai.h
+/home/michal/Desktop/PAMSI_projekt3/inc/game_ai.h
 

@@ -649,59 +649,59 @@ app/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/app/main.cpp.s
 .PHONY : app/main.cpp.s
 
-src/board.o: src/board.cpp.o
+src/game.o: src/game.cpp.o
 
-.PHONY : src/board.o
-
-# target to build an object file
-src/board.cpp.o:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/board.cpp.o
-.PHONY : src/board.cpp.o
-
-src/board.i: src/board.cpp.i
-
-.PHONY : src/board.i
-
-# target to preprocess a source file
-src/board.cpp.i:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/board.cpp.i
-.PHONY : src/board.cpp.i
-
-src/board.s: src/board.cpp.s
-
-.PHONY : src/board.s
-
-# target to generate assembly for a file
-src/board.cpp.s:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/board.cpp.s
-.PHONY : src/board.cpp.s
-
-src/computer.o: src/computer.cpp.o
-
-.PHONY : src/computer.o
+.PHONY : src/game.o
 
 # target to build an object file
-src/computer.cpp.o:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/computer.cpp.o
-.PHONY : src/computer.cpp.o
+src/game.cpp.o:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/game.cpp.o
+.PHONY : src/game.cpp.o
 
-src/computer.i: src/computer.cpp.i
+src/game.i: src/game.cpp.i
 
-.PHONY : src/computer.i
+.PHONY : src/game.i
 
 # target to preprocess a source file
-src/computer.cpp.i:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/computer.cpp.i
-.PHONY : src/computer.cpp.i
+src/game.cpp.i:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
 
-src/computer.s: src/computer.cpp.s
+src/game.s: src/game.cpp.s
 
-.PHONY : src/computer.s
+.PHONY : src/game.s
 
 # target to generate assembly for a file
-src/computer.cpp.s:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/computer.cpp.s
-.PHONY : src/computer.cpp.s
+src/game.cpp.s:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
+
+src/game_ai.o: src/game_ai.cpp.o
+
+.PHONY : src/game_ai.o
+
+# target to build an object file
+src/game_ai.cpp.o:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/game_ai.cpp.o
+.PHONY : src/game_ai.cpp.o
+
+src/game_ai.i: src/game_ai.cpp.i
+
+.PHONY : src/game_ai.i
+
+# target to preprocess a source file
+src/game_ai.cpp.i:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/game_ai.cpp.i
+.PHONY : src/game_ai.cpp.i
+
+src/game_ai.s: src/game_ai.cpp.s
+
+.PHONY : src/game_ai.s
+
+# target to generate assembly for a file
+src/game_ai.cpp.s:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/game_ai.cpp.s
+.PHONY : src/game_ai.cpp.s
 
 # Help Target
 help:
@@ -754,12 +754,12 @@ help:
 	@echo "... app/main.o"
 	@echo "... app/main.i"
 	@echo "... app/main.s"
-	@echo "... src/board.o"
-	@echo "... src/board.i"
-	@echo "... src/board.s"
-	@echo "... src/computer.o"
-	@echo "... src/computer.i"
-	@echo "... src/computer.s"
+	@echo "... src/game.o"
+	@echo "... src/game.i"
+	@echo "... src/game.s"
+	@echo "... src/game_ai.o"
+	@echo "... src/game_ai.i"
+	@echo "... src/game_ai.s"
 .PHONY : help
 
 

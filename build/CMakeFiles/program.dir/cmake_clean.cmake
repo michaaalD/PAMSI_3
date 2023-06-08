@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/program.dir/src/board.cpp.o"
-  "CMakeFiles/program.dir/src/computer.cpp.o"
+  "CMakeFiles/program.dir/src/game.cpp.o"
+  "CMakeFiles/program.dir/src/game_ai.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

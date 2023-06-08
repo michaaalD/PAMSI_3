@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-../inc/board.h
+../inc/game.h
 vector
 -
 
-../inc/computer.h
-board.h
-../inc/board.h
+../inc/game_ai.h
+../inc/game.h
+../inc/game.h
 
 /home/michal/Desktop/PAMSI_projekt3/app/main.cpp
 doctest/doctest.h
 /home/michal/Desktop/PAMSI_projekt3/app/doctest/doctest.h
-computer.h
-/home/michal/Desktop/PAMSI_projekt3/app/computer.h
-board.h
-/home/michal/Desktop/PAMSI_projekt3/app/board.h
+game_ai.h
+/home/michal/Desktop/PAMSI_projekt3/app/game_ai.h
+game.h
+/home/michal/Desktop/PAMSI_projekt3/app/game.h
 iostream
 -
 string

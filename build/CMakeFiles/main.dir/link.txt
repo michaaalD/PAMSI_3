@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/main.dir/app/main.cpp.o CMakeFiles/program.dir/src/computer.cpp.o CMakeFiles/program.dir/src/board.cpp.o  -o main 
+/usr/bin/c++  -g   CMakeFiles/main.dir/app/main.cpp.o CMakeFiles/program.dir/src/game_ai.cpp.o CMakeFiles/program.dir/src/game.cpp.o  -o main 

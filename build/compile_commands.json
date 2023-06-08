@@ -6,13 +6,13 @@
 },
 {
   "directory": "/home/michal/Desktop/PAMSI_projekt3/build",
-  "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I/home/michal/Desktop/PAMSI_projekt3/build -I/home/michal/Desktop/PAMSI_projekt3/inc -I/home/michal/Desktop/PAMSI_projekt3/build/_deps/doctest-src  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/program.dir/src/computer.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/computer.cpp",
-  "file": "/home/michal/Desktop/PAMSI_projekt3/src/computer.cpp"
+  "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I/home/michal/Desktop/PAMSI_projekt3/build -I/home/michal/Desktop/PAMSI_projekt3/inc -I/home/michal/Desktop/PAMSI_projekt3/build/_deps/doctest-src  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/program.dir/src/game_ai.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/game_ai.cpp",
+  "file": "/home/michal/Desktop/PAMSI_projekt3/src/game_ai.cpp"
 },
 {
   "directory": "/home/michal/Desktop/PAMSI_projekt3/build",
-  "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I/home/michal/Desktop/PAMSI_projekt3/build -I/home/michal/Desktop/PAMSI_projekt3/inc -I/home/michal/Desktop/PAMSI_projekt3/build/_deps/doctest-src  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/program.dir/src/board.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/board.cpp",
-  "file": "/home/michal/Desktop/PAMSI_projekt3/src/board.cpp"
+  "command": "/usr/bin/c++  -DENABLE_DOCTEST_IN_LIBRARY -I/home/michal/Desktop/PAMSI_projekt3/build -I/home/michal/Desktop/PAMSI_projekt3/inc -I/home/michal/Desktop/PAMSI_projekt3/build/_deps/doctest-src  -g   -Wall -Wextra -Wpedantic -Wno-switch-enum -Werror -std=c++17 -o CMakeFiles/program.dir/src/game.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/game.cpp",
+  "file": "/home/michal/Desktop/PAMSI_projekt3/src/game.cpp"
 },
 {
   "directory": "/home/michal/Desktop/PAMSI_projekt3/build/tests",

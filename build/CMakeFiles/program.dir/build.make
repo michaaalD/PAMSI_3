@@ -57,34 +57,34 @@ include CMakeFiles/program.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/program.dir/flags.make
 
-CMakeFiles/program.dir/src/computer.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/src/computer.cpp.o: ../src/computer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/computer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/computer.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/computer.cpp
+CMakeFiles/program.dir/src/game_ai.cpp.o: CMakeFiles/program.dir/flags.make
+CMakeFiles/program.dir/src/game_ai.cpp.o: ../src/game_ai.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/game_ai.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/game_ai.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/game_ai.cpp
 
-CMakeFiles/program.dir/src/computer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/computer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/Desktop/PAMSI_projekt3/src/computer.cpp > CMakeFiles/program.dir/src/computer.cpp.i
+CMakeFiles/program.dir/src/game_ai.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/game_ai.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/Desktop/PAMSI_projekt3/src/game_ai.cpp > CMakeFiles/program.dir/src/game_ai.cpp.i
 
-CMakeFiles/program.dir/src/computer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/computer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/Desktop/PAMSI_projekt3/src/computer.cpp -o CMakeFiles/program.dir/src/computer.cpp.s
+CMakeFiles/program.dir/src/game_ai.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/game_ai.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/Desktop/PAMSI_projekt3/src/game_ai.cpp -o CMakeFiles/program.dir/src/game_ai.cpp.s
 
-CMakeFiles/program.dir/src/board.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/src/board.cpp.o: ../src/board.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/board.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/board.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/board.cpp
+CMakeFiles/program.dir/src/game.cpp.o: CMakeFiles/program.dir/flags.make
+CMakeFiles/program.dir/src/game.cpp.o: ../src/game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/game.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/program.dir/src/game.cpp.o -c /home/michal/Desktop/PAMSI_projekt3/src/game.cpp
 
-CMakeFiles/program.dir/src/board.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/board.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/Desktop/PAMSI_projekt3/src/board.cpp > CMakeFiles/program.dir/src/board.cpp.i
+CMakeFiles/program.dir/src/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/game.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/Desktop/PAMSI_projekt3/src/game.cpp > CMakeFiles/program.dir/src/game.cpp.i
 
-CMakeFiles/program.dir/src/board.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/board.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/Desktop/PAMSI_projekt3/src/board.cpp -o CMakeFiles/program.dir/src/board.cpp.s
+CMakeFiles/program.dir/src/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/game.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/Desktop/PAMSI_projekt3/src/game.cpp -o CMakeFiles/program.dir/src/game.cpp.s
 
-program: CMakeFiles/program.dir/src/computer.cpp.o
-program: CMakeFiles/program.dir/src/board.cpp.o
+program: CMakeFiles/program.dir/src/game_ai.cpp.o
+program: CMakeFiles/program.dir/src/game.cpp.o
 program: CMakeFiles/program.dir/build.make
 
 .PHONY : program

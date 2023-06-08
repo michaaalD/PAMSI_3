@@ -76,12 +76,12 @@ main_OBJECTS = \
 
 # External object files for target main
 main_EXTERNAL_OBJECTS = \
-"/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/computer.cpp.o" \
-"/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/board.cpp.o"
+"/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/game_ai.cpp.o" \
+"/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/game.cpp.o"
 
 main: CMakeFiles/main.dir/app/main.cpp.o
-main: CMakeFiles/program.dir/src/computer.cpp.o
-main: CMakeFiles/program.dir/src/board.cpp.o
+main: CMakeFiles/program.dir/src/game_ai.cpp.o
+main: CMakeFiles/program.dir/src/game.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"

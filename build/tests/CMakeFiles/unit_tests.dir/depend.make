@@ -4,8 +4,8 @@
 tests/CMakeFiles/unit_tests.dir/main.cpp.o: ../tests/doctest/doctest.h
 tests/CMakeFiles/unit_tests.dir/main.cpp.o: ../tests/main.cpp
 
-tests/CMakeFiles/unit_tests.dir/test_file.cpp.o: ../inc/board.h
-tests/CMakeFiles/unit_tests.dir/test_file.cpp.o: ../inc/computer.h
+tests/CMakeFiles/unit_tests.dir/test_file.cpp.o: ../inc/game.h
+tests/CMakeFiles/unit_tests.dir/test_file.cpp.o: ../inc/game_ai.h
 tests/CMakeFiles/unit_tests.dir/test_file.cpp.o: ../tests/doctest/doctest.h
 tests/CMakeFiles/unit_tests.dir/test_file.cpp.o: ../tests/test_file.cpp
 

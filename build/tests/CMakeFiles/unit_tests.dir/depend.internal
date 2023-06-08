@@ -5,7 +5,7 @@ tests/CMakeFiles/unit_tests.dir/main.cpp.o
  /home/michal/Desktop/PAMSI_projekt3/tests/doctest/doctest.h
  /home/michal/Desktop/PAMSI_projekt3/tests/main.cpp
 tests/CMakeFiles/unit_tests.dir/test_file.cpp.o
- /home/michal/Desktop/PAMSI_projekt3/inc/board.h
- /home/michal/Desktop/PAMSI_projekt3/inc/computer.h
+ /home/michal/Desktop/PAMSI_projekt3/inc/game.h
+ /home/michal/Desktop/PAMSI_projekt3/inc/game_ai.h
  /home/michal/Desktop/PAMSI_projekt3/tests/doctest/doctest.h
  /home/michal/Desktop/PAMSI_projekt3/tests/test_file.cpp

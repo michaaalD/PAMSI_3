@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/michal/Desktop/PAMSI_projekt3/src/board.cpp" "/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/board.cpp.o"
-  "/home/michal/Desktop/PAMSI_projekt3/src/computer.cpp" "/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/computer.cpp.o"
+  "/home/michal/Desktop/PAMSI_projekt3/src/game.cpp" "/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/game.cpp.o"
+  "/home/michal/Desktop/PAMSI_projekt3/src/game_ai.cpp" "/home/michal/Desktop/PAMSI_projekt3/build/CMakeFiles/program.dir/src/game_ai.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
