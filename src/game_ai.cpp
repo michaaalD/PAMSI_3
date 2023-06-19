@@ -5,6 +5,11 @@
 
 int infinity = std::numeric_limits<int>::max();
 
+int Game::get(int i, int j) const
+{
+    return board[i][j];
+}
+
 int Game_ai::heuristic(Game game) const
 {
     int score = 0;
