@@ -5,6 +5,147 @@
 
 int infinity = std::numeric_limits<int>::max();
 
+int Game_ai::heuristic(Game game) const
+{
+    int score = 0;
+    int size = game.getSize();
+    int center = size / 2;
+    for(int i = 1; i <= size; i++)
+    {
+        for(int j = 1; j <= size; j++)
+        {
+            if(game.get(i, j) == 0)
+            {
+                continue;
+            }
+            if(i == center && j == center)
+            {
+                score += 3;
+            }
+            else if(i == center || j == center)
+            {
+                score += 2;
+            }
+            else
+            {
+                score += 1;
+            }
+        }
+    }
+    return score;
+}
+
+
+
+
+
+
+
+
+
+
+int Game_ai::min_max(Game game, int depth, int alpha, int beta, bool maximizing) const 
+{
+    int game_status = game.current();
+    
+    if(game_status != 0 || game.fullCheck() || depth == 0)
+    {
+        return heuristic(game);
+        }
+    if(maximizing){
+        int max = -infinity;
+        for(int i = 1; i <= game.getSize(); i++) 
+            for(int j = 1; j <= game.getSize(); j++) 
+                if(!game.available(i, j) && depth >= 0)
+                {
+                    game.changeTurn(1);
+                    game.set(i, j);
+                    max = std::max(max, min_max(game, depth - 1, alpha, beta, false));
+                    game.remove(i, j);
+                    alpha = std::max(alpha, max);
+                    if(alpha >= beta)
+                    {
+                        return alpha;
+                        }
+                }
+        return max;
+    }
+    else{
+        int min = infinity;
+        for(int i = 1; i < game.getSize() + 1; i++) 
+            for(int j = 1; j < game.getSize() + 1; j++) 
+                if(!game.available(i, j) && depth >= 0 )
+                {
+                    game.changeTurn(0);
+                    game.set(i, j);
+                    min = std::min(min, min_max(game, depth - 1, alpha, beta, true));
+                    game.remove(i, j);
+                    beta = std::min(beta, min);
+                    if(beta <= alpha)
+                        {
+                        return beta;
+                        }
+                }
+        return min;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * @brief Algorytm min_max z alfa beta ciecie
@@ -88,6 +229,8 @@ void Game_ai::move(Game game)
                 }
             }
 }
+
+
 
 
 
