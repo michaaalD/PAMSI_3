@@ -1,4 +1,4 @@
-#include "board.h"
+#include "../inc/game.h"
 
 #include <iomanip>
 #include <iostream>
@@ -11,24 +11,27 @@
  * @param to_win ilosc w linii do wygrania 
  * @param player_symbol symbol 
  */
-Board::Board(int size, int to_win, char player_symbol) : size(size), to_win(to_win), player_symbol(player_symbol), entries(size, std::vector<char>(size)) {
+Game::Game(int size, int to_win, char player_symbol) : size(size), to_win(to_win), player_symbol(player_symbol), moves(size, std::vector<char>(size)) {
     // przekroczenia
-    if(size < 3){
+    if(size < 3)
+    {
         size = 3;
-        entries.resize(size);
+        moves.resize(size);
     }
 
-    if(to_win < 2){
+    if(to_win < 2)
+    {
         to_win = 2;
     }
-    if(to_win > size){
+    if(to_win > size)
+    {
         to_win = size;
     }
 
-    // wyzerowanie pol
+    // zerowanie pol
     for(int x = 0; x < size; x++)
         for(int y = 0; y < size; y++)
-            entries[x][y] = 0;
+            moves[x][y] = 0;
 
     if (player_symbol == 'x')
         ai_symbol = 'o';
@@ -46,40 +49,45 @@ Board::Board(int size, int to_win, char player_symbol) : size(size), to_win(to_w
  * 
  * @param player zwraca kto teraz ma swoja ture komputer/gracz
  */
-void Board::changeTurn(bool player){ 
+void Game::changeTurn(bool player){ 
     player ? turn = 1 : turn = 0; }
 
 /**
  * @brief Funkcja do yswietlania planszy
  * 
  */
-void Board::print() const 
+void Game::print() const 
 {
     std::cout << "     ";
-    for(int x = 0; x < size; x++) {
-        if(x < 9){
-            std::cout << "x" << x + 1 << "   ";
+    for(int x = 0; x < size; x++) 
+    {
+        if(x < 9)
+        {
+            std::cout << "x" << x + 1 << "  ";
         }
-        else{
+        else
+        {
             std::cout << "x" << x + 1 << "  ";
         }
     }
     std::cout << '\n';
 
-    
-    for(int y = 0; y < size; y++){
+    for(int y = 0; y < size; y++)
+    {
         std::cout << std::setw(2) << "y" << y + 1 << "   ";
-        for(int x = 0; x < size; x++) {
-            if(entries[x][y] == 0)
+        for(int x = 0; x < size; x++) 
+        {
+            if(moves[x][y] == 0)
                 std::cout << ' ';
             else
-                std::cout << entries[x][y];
+                std::cout << moves[x][y];
             if(x < size - 1)
                 std::cout << " | ";
         }
         std::cout << "   ";
 
-        if(y < size - 1){
+        if(y < size - 1)
+        {
             std::cout << "\n     ";
             for (int i = 0; i < size - 1; i++)
                 std::cout << std::string(3, '-') << '+';
@@ -96,8 +104,9 @@ void Board::print() const
  * @param x wspolrzedna x na planszy
  * @param y wspolrzedna y na planszy
  */
-void Board::remove(int x, int y){
-    entries[x - 1][y - 1] = 0;
+void Game::remove(int x, int y)
+{
+    moves[x - 1][y - 1] = 0;
 }
 
 
@@ -107,7 +116,8 @@ void Board::remove(int x, int y){
  * @return true zwraca 1 jesli tura gracza
  * @return false 0 jesli tura kompa
  */
-bool Board::turnCheck() const {
+bool Game::turnCheck() const 
+{
     return turn;
 }
 
@@ -116,13 +126,17 @@ bool Board::turnCheck() const {
  * @brief 
  * 
  */
-void Board::reset(){
+/*
+void Game::reset()
+{
     for(int x = 0; x < size; x++)
-        for(int y = 0; y < size; y++){
-            entries[x][y] = 0;
+        for(int y = 0; y < size; y++)
+        {
+            moves[x][y] = 0;
         }
     turn = 1;  // gracz zaczyna
 }
+*/
 
 
 /**
@@ -132,9 +146,10 @@ void Board::reset(){
  * @param y wspolrzedna y na pplanszy
  * @return char 
  */
-char Board::check(int x, int y) const{
+char Game::check(int x, int y) const
+{
     if (x >= 1 && x <= size && y >= 1 && y <= size)
-        return entries[x - 1][y - 1];
+        return moves[x - 1][y - 1];
     else
         return 0;
 }
@@ -148,7 +163,8 @@ char Board::check(int x, int y) const{
  * @return true zwraca gdy wolne
  * @return false zwraca gdy zajete
  */
-bool Board::available(int x, int y) const {
+bool Game::available(int x, int y) const 
+{
     return check(x, y);
 }
 
@@ -159,8 +175,10 @@ bool Board::available(int x, int y) const {
  * @return true jezeli jest zapelniona
  * @return false jezeli jest miejsce
  */
-bool Board::isFull() const {
-    for (int x = 1; x < size+1; x++) {
+bool Game::fullCheck() const 
+{
+    for (int x = 1; x < size+1; x++) 
+    {
         for(int y = 1; y < size+1; y++)
             if(!available(x, y))
                 return false;
@@ -173,18 +191,40 @@ bool Board::isFull() const {
  * 
  * @return int zwraca czy gracz/komputer osiagnal ilosc znakow w jednej linii po liniach prostych/przekatnych
  */
-int Board::current() const {
+int Game::current() const {
     int player_counter;
     int ai_counter;
 
+    // poziom
+        for(int x = 0; x < size; x++) 
+        {
+            player_counter = ai_counter = 1;
+            for(int y = 0; y < size - 1; y++) 
+            {
+                if(moves[x][y] == moves[x][y + 1])
+                {
+                    if (moves[x][y] == player_symbol)
+                        player_counter++;
+                    else if(moves[x][y] == ai_symbol)
+                        ai_counter++;
+                    if(player_counter == to_win)
+                        return 1;
+                    if(ai_counter == to_win)
+                        return -1;
+                }
+            }
+        }
+        
     // pion
-        for(int y = 0; y < size; y++){
+        for(int y = 0; y < size; y++)
+        {
             player_counter = ai_counter = 1;
             for(int x = 0; x < size - 1; x++){
-                if(entries[x][y] == entries[x + 1][y]){
-                    if (entries[x][y] == player_symbol)
+                if(moves[x][y] == moves[x + 1][y])
+                {
+                    if (moves[x][y] == player_symbol)
                         player_counter++;
-                    else if (entries[x][y] == ai_symbol)
+                    else if (moves[x][y] == ai_symbol)
                         ai_counter++;
                     if (player_counter == to_win)
                         return 1;
@@ -194,31 +234,19 @@ int Board::current() const {
             }
         }
 
-    // poziom
-    for(int x = 0; x < size; x++) {
-        player_counter = ai_counter = 1;
-        for(int y = 0; y < size - 1; y++) {
-            if(entries[x][y] == entries[x][y + 1]){
-                if (entries[x][y] == player_symbol)
-                    player_counter++;
-                else if(entries[x][y] == ai_symbol)
-                    ai_counter++;
-                if(player_counter == to_win)
-                    return 1;
-                if(ai_counter == to_win)
-                    return -1;
-            }
-        }
-    }
+
 
     // przekatne
-    for(int x = 1; x < size - to_win + 1; x++){
+    for(int x = 1; x < size - to_win + 1; x++)
+    {
         player_counter = ai_counter = 1;
-        for(int y = 0; y < (size - x - 1); y++){
-            if(entries[y][x + y] == entries[y + 1][x + y + 1]){
-                if (entries[y][x + y] == player_symbol)
+        for(int y = 0; y < (size - x - 1); y++)
+        {
+            if(moves[y][x + y] == moves[y + 1][x + y + 1])
+            {
+                if (moves[y][x + y] == player_symbol)
                     player_counter++;
-                else if (entries[y][x + y] == ai_symbol)
+                else if (moves[y][x + y] == ai_symbol)
                     ai_counter++;
                 if (player_counter == to_win)
                     return 1;
@@ -227,13 +255,16 @@ int Board::current() const {
             }
         }
     }
-    for(int x = 0; x < size - to_win + 1; x++){
+    for(int x = 0; x < size - to_win + 1; x++)
+    {
         player_counter = ai_counter = 1;
-        for(int y = 0; y < (size - x - 1); y++){
-            if(entries[x + y][y] == entries[x + y + 1][y + 1]){
-                if(entries[x + y][y] == player_symbol)
+        for(int y = 0; y < (size - x - 1); y++)
+        {
+            if(moves[x + y][y] == moves[x + y + 1][y + 1])
+            {
+                if(moves[x + y][y] == player_symbol)
                     player_counter++;
-                else if(entries[x + y][y] == ai_symbol)
+                else if(moves[x + y][y] == ai_symbol)
                     ai_counter++;
                 if(player_counter == to_win)
                     return 1;
@@ -242,13 +273,16 @@ int Board::current() const {
             }
         }
     }
-    for(int x = 0; x < size - to_win + 1; x++){
+    for(int x = 0; x < size - to_win + 1; x++)
+    {
         player_counter = ai_counter = 1;
-        for(int y = 0; y < (size - x - 1); y++){
-            if(entries[size - 1 - y][x + y] == entries[size - 1 - (y + 1)][x + y + 1]){
-                if(entries[size - 1 - y][x + y] == player_symbol)
+        for(int y = 0; y < (size - x - 1); y++)
+        {
+            if(moves[size - 1 - y][x + y] == moves[size - 1 - (y + 1)][x + y + 1])
+            {
+                if(moves[size - 1 - y][x + y] == player_symbol)
                     player_counter++;
-                else if(entries[size - 1 - y][x + y] == ai_symbol)
+                else if(moves[size - 1 - y][x + y] == ai_symbol)
                     ai_counter++;
                 if(player_counter == to_win)
                     return 1;
@@ -257,13 +291,16 @@ int Board::current() const {
             }
         }
     }
-    for(int x = 1; x < size - to_win + 1; x++){
+    for(int x = 1; x < size - to_win + 1; x++)
+    {
         player_counter = ai_counter = 1;
-        for(int y = 0; y < (size - x - 1); y++){
-            if(entries[size - 1 - x - y][y] == entries[size - x - y - 2][y + 1]){
-                if(entries[size - 1 - x - y][y] == player_symbol)
+        for(int y = 0; y < (size - x - 1); y++)
+        {
+            if(moves[size - 1 - x - y][y] == moves[size - x - y - 2][y + 1])
+            {
+                if(moves[size - 1 - x - y][y] == player_symbol)
                     player_counter++;
-                else if(entries[size - 1 - x - y][y] == ai_symbol)
+                else if(moves[size - 1 - x - y][y] == ai_symbol)
                     ai_counter++;
                 if(player_counter == to_win)
                     return 1;
@@ -281,14 +318,15 @@ int Board::current() const {
  * @param x wspolrzedna x na planszy
  * @param y wspolrzedna y na planszy
  */
-void Board::set(int x, int y) 
+void Game::set(int x, int y) 
 {
-    if(x >= 1 && x <= size && y >= 1 && y <= size){
+    if(x >= 1 && x <= size && y >= 1 && y <= size)
+    {
         if(turnCheck()){
-            entries[x - 1][y - 1] = player_symbol;
+            moves[x - 1][y - 1] = player_symbol;
         }
         else{
-            entries[x - 1][y - 1] = ai_symbol;
+            moves[x - 1][y - 1] = ai_symbol;
         }
     }
 }

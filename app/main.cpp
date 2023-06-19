@@ -3,19 +3,15 @@
 #include "doctest/doctest.h"
 #endif
 
-#include "computer.h"
-#include "board.h"
+#include "game_ai.h"
+#include "game.h"
 #include <iostream>
 #include <string>
-
 #include <iostream>
 #include <sstream>
 #include <fstream>
-
 #include <iomanip>
 #include <string>
-
-
 
 int main() 
 {
@@ -34,16 +30,16 @@ int main()
             std::cin >> size;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-            if (size < 3 || size > 7)
+            if (size < 3 || size > 8)
                 std::cout << "Error - zly wymiar planszy\n";
-        }while(size < 3 || size >7);
+        }while(size < 3 || size >8);
 
         do{
             std::cout << "glebokosc rekursji AI: ";
             std::cin >> depth;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-        }while(depth <= 0 || depth > 7);
+        }while(depth <= 0 || depth > 8);
 
         
         do{
@@ -51,78 +47,82 @@ int main()
             std::cin >> length;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-            if (length < 2 || length > size)
+            if(length < 2 || length > size)
                 std::cout << "Ilosc znakow musi byc z przedzialu <2," << size << ">\n";
-        }while (length < 2 || length > size);
+        }while(length < 2 || length > size);
        
-    Board board(size, length, player);
-    Computer ai(depth);
+    Game game(size, length, player);
+    Game_ai ai(depth);
 
-    // gra
-        board.reset();
-        board.print();
+    game.print();
 
-        while(board.current() == 0 && !board.isFull()){  // dopoki wygrana lub remis
-            // ruch gracza
-            if(board.turnCheck()) {
-                int x; 
-                int y;
-                std::cout << "Twoja Tura\n";
+    while(game.current() == 0 && !game.fullCheck())
+        {  
+            if(game.turnCheck()) 
+            {
+                int x=0; 
+                int y=0;
+                std::cout << "twoja tura\n";
                 do{
-                    // wczytywanie x
                     do{
-                        x = 0;
                         std::cout << "x ---> ";
                         std::cin >> x;
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-                        if(x < 1 || x > size)
+                        if(x > size || x < 1)
+                        {
                             std::cout << "xE<1," << size << ">\n";
-                    } while(x < 1 || x > size);
+                        }
+                    }while(x > size || x < 1);
 
-                    // wczytywanie y
-                    do {
-                        y = 0;
+                  
+                    do{
                         std::cout << "y ---> ";
                         std::cin >> y;
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-                        if (y < 1 || y > size)
+                        if(y > size || y < 1 )
+                        {
                             std::cout << "# yE <1," << size << ">\n";
-                    }while(y < 1 || y > size);
+                        }
+                    }while(y > size || y < 1 );
 
-                    // zajete pole
-                    if(board.available(x, y)) {
-                        std::cout << "pole (" << x << "," << y << ") jest zajete";
+                    
+                    if(game.available(x, y)) {
+                        std::cout << "punkt (" << x << "," << y << ") jest zajety";
                         std::cout << '\n';
                     }
-                } while(board.available(x, y) || x < 1 || x > size || y < 1 || y > size);
-                board.set(x, y);
-                board.changeTurn(0);
+                }while(game.available(x, y) || x < 1 || x > size || y < 1 || y > size);
+                game.set(x, y);
+                game.changeTurn(0);
             }
-            // ruch ai
+            
+
             else{
-                std::cout << "Tura AI" << std::endl;
-                ai.move(board);
-                board.set(ai.get_x(), ai.get_y());
-                 board.changeTurn(1);
+                std::cout << "tura ai" << std::endl;
+                ai.move(game);
+                game.set(ai.get_x(), ai.get_y());
+                game.changeTurn(1);
             }
 
-            board.print();
+            game.print();
 
             // sprawdzenie stanu gry
-            if(board.isFull() && board.current() == 0)
+            if(game.fullCheck() && game.current() == 0)
+            {
                 std::cout << "Wynik: Remis";
-            else if(board.current() != 0) {
-                std::cout << "Wynik: wygrywa ";
-                if(!board.turnCheck())
-                    std::cout << "gracz (" << player << ")";
-                else{
-                    std::cout << "AI (" << ai_player << ")";
+            }
+            else if(game.current() != 0) 
+            {
+                std::cout << "wygrywa: ";
+                if(!game.turnCheck())
+                {
+                    std::cout << player << std::endl;
+                }
+                else
+                {
+                    std::cout << ai_player << std::endl;
                 }
             }
-            std::cout << '\n';
         }
-        
-
 }

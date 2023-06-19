@@ -39,8 +39,8 @@ find_lto(CXX)
 # --------------------------------------------------------------------------------
 set(SOURCES          # All .cpp files in src/
     
-    src/computer.cpp
-    src/board.cpp
+    src/game_ai.cpp
+    src/game.cpp
     
 )
 set(TESTFILES        # All .cpp files in tests/

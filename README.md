@@ -1,12 +1,12 @@
-# pamsi 1
+# pamsi 3
 
  2022/2023
 
-Zadanie 1 -   kolejka 
+Zadanie 3 -  kolko i krzyzyk
 
 ## Building
 
-Build by making a build directory (i.e. `build/`), run `cmake` in that dir, and then use `make` to build the desired target.
+Build by making a build directory (i.e. `build/`), run `cmake ..` in that dir, and then use `make` to build the desired target.
 
 Requirements: cmake, gnuplot, doxygen + dot (in graphviz library)
 
@@ -30,8 +30,8 @@ Things to remember during upgrading project to new task:
 //                         Locate files (change as needed).
 // --------------------------------------------------------------------------------
 set(SOURCES          // All .cpp files in src/
-    src/computer.cpp
-    src/board.cpp
+    src/game_ai.cpp
+    src/game.cpp
   
     
      // etc.
